@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+/*头部*/
+.head{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 80px;
+    justify-content: space-between;
+    background-color: black;
+}
+.head_left{
+    font-size: 25px;
+}
+.head_right a{
+    display: inline-block;
+    text-align: center;
+    width: 70px;
+}
+#head_pic{
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/head1.jpg');
+    background-size: 100% 100%;
+}
+/*分类区*/
+nav{
+    margin: 0 auto;
+    width: 1000px;
+    color: white;
+    background-color: black;
+}
+nav ul{
+    list-style: none;
+    margin: 0 auto;
+    text-align: center;
+}
+nav ul li{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+}
+.active{
+    background-color: aqua;
+    color: black;
+}
+/*登录页面*/
+.login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 400px;
+    padding: 50px 0;
+    background-color: white;
+}
+.login_head{
+    font-size: 30px;
+    text-align: center;
+}
+.login form div,
+.register form div{
+    margin: 20px 30px;
+}
+.login_name label,
+.login_pwd label{
+    font-size: 20px;
+}
+#user_name,
+#pwd,
+#userName,
+#userPwd,
+#userRePwd,
+#name,
+#userMobile,
+#userEmail{
+    width: 300px;
+    height: 30px;
+    font-size: 20px;
+}
+/*登录按钮*/
+.login_btn{
+    width: 250px;
+    height: 40px;
+    display: block;
+    margin: 50px auto;
+    background-color: #F7671D;
+    border-radius: 10px;
+}
+/*关闭按钮*/
+.close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 999;
+}
+.close:hover,
+.write_close:hover{
+    cursor: pointer;
+}
+/*遮罩层*/
+.login_layer,
+.reg_layer,
+.detail_layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, .7);
+}
+/*注册页面*/
+.register{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 700px;
+    padding: 50px 0;
+    background-color: white;
+}
+/*注册按钮*/
+.reg_btn{
+    width: 250px;
+    height: 40px;
+    display: block;
+    margin: 50px auto;
+    background-color: #FFA81F;
+    border-radius: 10px;
+}
+/*文章显示区*/
+main{
+    margin-top: 30px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.article{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #33ffff;
+}
+.article h2{
+    padding: 10px 10px 0 10px;;
+}
+.article h4{
+    /*float: left;*/
+    padding: 5px 15px 0 15px;
+}
+.article p{
+    padding: 5px 25px 20px 25px;
+}
+.article .time{
+    justify-content: space-between;
+}
+/*查看详情*/
+.detail{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.detail button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    background-color: #449D44;
+}
+
+/*评论区*/
+.comment{
+    width: 1000px;
+    margin: 50px auto;
+    border-bottom: 1px solid #E8ECEE;
+}
+.comment_content{
+    padding: 0 30px;
+}
+.comment_content div{
+    padding: 20px;
+    word-wrap: break-word;
+    border-top: 1px solid #E8ECEE;
+}
+.detail_head{
+    position: fixed;
+    top: 0;
+}
+.user_write{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    padding: 40px 20px;
+    width: 500px;
+    height: 670px;
+    background-color: white;
+}
+.user_write textarea{
+    font-size: 20px;
+    width: 100%;
+    resize: none;
+}
+.user_write div{
+    text-align: center;
+}
+/*回复按钮*/
+.detail_btn{
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: #317EF3;
+}
+/*回复关闭按钮*/
+.write_close{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    z-index: 999;
+}
+.commentTime{
+    font-size: 13px;
+    margin-top: 20px;
+    text-align: right;
+}

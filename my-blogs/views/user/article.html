@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="author" content="Yaofeng">
+        <title>发表文章</title>
+        <link rel="stylesheet" href="/style/home.css">
+        <style>
+            main div{
+                padding-top: 30px;
+                text-align: center;
+            }
+            textarea{
+                resize: none;
+                font-size: 16px;
+            }
+            input{
+                width: 659px;
+                height: 30px;
+                font-size: 18px;
+            }
+            button{
+                width: 300px;
+                height: 40px;
+                color: white;
+                background-color: #2A7DFA;
+            }
+            #choose{
+                width: 663px;
+                margin: 0 auto;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="head flex">
+            <div class="head_left">
+                <a href="">博客</a>
+            </div>
+            <div class="head_right">
+                {{if userId}}
+                <a href="/home">返回</a>
+                <a href="/user/logout">退出</a>
+                {{else}}
+                <a href="/home" onclick="showLogin()">请先登录</a>
+                {{/if}}
+            </div>
+        </header>
+        <main>
+            <div>
+                <input type="text" placeholder="请输入标题">
+            </div>
+            <div id="choose">
+                <select name="select" id="select">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Nodejs">Nodejs</option>
+                </select>
+            </div>
+            <div>
+                <textarea name="" id="" cols="80" rows="30"></textarea>
+            </div>
+            <div>
+                <button type="button" class="submit">提交</button>
+            </div>
+        </main>
+    </body>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $('.submit').click(function(){
+            if(!$('input').val()){
+                alert('标题不能为空！');
+                return false;
+            }
+            $.ajax({
+                url: '/article/',
+                type: 'post',
+                data: {title: $('input').val(),content: $('textarea').val(),select: $('#select').val()},
+                success: function(res){
+                    alert(res.msg);
+                },
+                error: function(err){
+                    alert('提交失败...');
+                }
+            });
+        });
+    </script>
+</html>

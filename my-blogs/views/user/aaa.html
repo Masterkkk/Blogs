@@ -1,0 +1,13 @@
+{{each data}}
+<div class="article">
+    <h2>{{$value.title}}</h2>
+    <div class="time flex">
+        <h4>{{$value.select}}</h4>
+        <h5>{{$value.getDate()}}</h5>
+    </div>
+    <div class="dot-ellipsis dot-height-200 showContent">
+        <p>{{$value.content}}</p>
+    </div>
+    <div class="detail"><button onclick="location.href='/detail/{{$value.id}}'">查看详情</button></div>
+</div>
+{{/each}}
